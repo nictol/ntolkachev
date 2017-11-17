@@ -26,4 +26,25 @@ public class MaxTest {
         int result = maxim.max(5, 5);
         assertThat(result, is(5));
     }
+
+    @Test
+    public void whetFistIsBiggest() {
+        Max maxim = new Max();
+        int result = maxim.max(5, 3,1);
+        assertThat(result, is(5));
+    }
+
+    @Test
+    public void whetSecondIsBiggest() {
+        Max maxim = new Max();
+        int result = maxim.max(5, 13,1);
+        assertThat(result, is(13));
+    }
+
+    @Test
+    public void whetThirdIsBiggest() {
+        Max maxim = new Max();
+        int result = maxim.max(5, 3,16);
+        assertThat(result, is(16));
+    }
 }
