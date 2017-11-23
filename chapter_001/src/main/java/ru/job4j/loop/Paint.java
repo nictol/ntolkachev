@@ -7,8 +7,11 @@ public class Paint {
         for (int i = 1; i <= h; i++) {
             int amountOfParts = 2 * (h - i);  //Amount of parts (" ") in this level
             for (int j = 1; j <= amountOfPiramids; j++) {
-                if (j <= (amountOfParts / 2) | (j > (amountOfPiramids - amountOfParts / 2))) piramid.append(' ');
-                else piramid.append('^');
+                if (j <= (amountOfParts / 2) | (j > (amountOfPiramids - amountOfParts / 2))) {
+                    piramid.append(' ');
+                } else {
+                    piramid.append('^');
+                }
             }
             piramid.append(System.getProperty("line.separator"));
         }
