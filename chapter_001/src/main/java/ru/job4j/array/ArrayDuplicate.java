@@ -23,8 +23,7 @@ public class ArrayDuplicate {
             i++;
         }
 
-        array = Arrays.copyOf(array, last + 1);
-        return array;
+        return  Arrays.copyOf(array, last + 1);
 
     }
 }
