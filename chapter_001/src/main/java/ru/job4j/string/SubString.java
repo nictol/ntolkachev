@@ -9,13 +9,14 @@ public class SubString {
             result = true;
 
             for (int j = 0; j < sub.length(); j++) {
-                if (sub.charAt(j) != origin.charAt(k)) result = false;
+                if (sub.charAt(j) != origin.charAt(k)) {
+                    result = false;
+                }
                 k++;
             }
 
-            if (result) {
-                return result;
-            }
+            if (result) break;
+
         }
         return result;
     }
