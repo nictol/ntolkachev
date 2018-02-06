@@ -6,17 +6,18 @@ public class ConsoleInput implements Input {
 
     private Scanner in = new Scanner(System.in);
 
-    public String ask(String s) {
 
-        System.out.println(s);
-        String c = in.nextLine();
-        return c;
+    public String ask(String message) {
+
+        System.out.println(message);
+        String inputLine = in.nextLine();
+        return inputLine;
     }
 
-    public long ask_date(String s) {
-        System.out.println(s);
-        long c = in.nextLong();
-        return c;
+    public long ask_date(String message) {
+        System.out.println(message);
+        long inputNumber = in.nextLong();
+        return inputNumber;
     }
 
 }
