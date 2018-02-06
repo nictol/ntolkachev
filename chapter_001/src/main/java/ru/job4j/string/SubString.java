@@ -15,7 +15,9 @@ public class SubString {
                 k++;
             }
 
-            if (result) break;
+            if (result) {
+                break;
+            }
 
         }
         return result;

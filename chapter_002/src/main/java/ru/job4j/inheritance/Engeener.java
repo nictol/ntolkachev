@@ -5,11 +5,7 @@ public class Engeener extends Profession {
     public String refresherCourses;
     public Integer averageSalary;
 
-    public void Engeener() {
-
-    }
-
-    public void MakeScheme (Experience exp) {
+    public void makeScheme(Experience exp) {
     }
 
 }

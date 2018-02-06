@@ -6,14 +6,11 @@ public class Doctor extends Profession {
     public String clothingSize;
     public Patient patient;
 
-    public void Doctor() {
-    }
-
-    public void SetDiagnosis(Patient pt, String diagnosis) {
+    public void setDiagnosis(Patient pt, String diagnosis) {
         pt.diagnosis = diagnosis;
     }
 
-    public String Treat(Patient pt) {
+    public String treat(Patient pt) {
         return this.getName() + " лечит пациента" + pt;
     }
 

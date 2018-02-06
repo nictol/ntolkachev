@@ -16,10 +16,13 @@ public class DummyBot {
      */
     public String answer(String question) {
         String answer = "";
-        if (question == "Привет, Бот.") answer = "Привет, умник.";
-          else if (question == "Пока.") answer = "До скорой встречи.";
-            else answer="Это ставит меня в тупик. Спросите другой вопрос.";
-
+        if (question == "Привет, Бот.") {
+            answer = "Привет, умник.";
+        } else if (question == "Пока.") {
+            answer = "До скорой встречи.";
+        } else {
+            answer = "Это ставит меня в тупик. Спросите другой вопрос.";
+        }
         return answer;
     }
 }

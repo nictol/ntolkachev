@@ -14,7 +14,7 @@ public class ConsoleInput implements Input {
         return inputLine;
     }
 
-    public long ask_date(String message) {
+    public long askDate(String message) {
         System.out.println(message);
         long inputNumber = in.nextLong();
         return inputNumber;

@@ -142,7 +142,7 @@ public class StartUI {
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
         String id = this.input.ask("Введите id заявки которую хотите поменять :");
-        long date = this.input.ask_date("Введите дату создания заявки :");
+        long date = this.input.askDate("Введите дату создания заявки :");
         Item item = new Item(name, desc, date);
         this.tracker.replace(id, item);
         System.out.println("------------ Изменения заявки выполнено --------------");
@@ -169,7 +169,7 @@ public class StartUI {
         System.out.println("------------ Добавление новой заявки --------------");
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите имя заявки :");
-        long date = this.input.ask_date("Введите дату создания заявки :");
+        long date = this.input.askDate("Введите дату создания заявки :");
         Item item = new Item(name, desc, date);
         this.tracker.add(item);
         System.out.println("------------ Новая заявка с getId : " + item.getID() + "-----------");

@@ -9,15 +9,15 @@ public class Teacher extends Profession {
 
     }
 
-    public String GetMoney() {
+    public String getMoney() {
         return this.getName() + " получила зарплату!";
     }
 
-    public void Rate(Student st, Mark m) {
+    public void rate(Student st, Mark m) {
         st.mark = m;
     }
 
-    public void ChangeSchool(String newschool) {
+    public void changeSchool(String newschool) {
         this.school = newschool;
     }
 }
