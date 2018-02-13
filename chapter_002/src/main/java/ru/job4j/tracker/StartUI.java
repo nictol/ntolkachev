@@ -45,7 +45,7 @@ public class StartUI {
     /**
      * Получение данных от пользователя.
      */
-    private final ConsoleInput input;
+    private final Input input;
 
     /**
      * Хранилище заявок.
@@ -59,7 +59,7 @@ public class StartUI {
      * @param tracker хранилище заявок.
      */
 
-    public StartUI(ConsoleInput input, Tracker tracker) {
+    public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
     }
@@ -102,8 +102,8 @@ public class StartUI {
         String name = this.input.ask("Введите имя заявки которую хотите найти :");
         Item[] items = new Item[100];
         items = this.tracker.findByName(name);
-        for (Item i : items) {
-            System.out.println(i.getID() + " " + i.getName() + " " + i.getDescription() + " " + i.getCreated());
+        for (int i = 0; i < tracker.getPosition(); i++) {
+            System.out.println(items[i].getID() + " " + items[i].getName() + " " + items[i].getDescription() + " " + items[i].getCreated());
         }
         System.out.println("------------------------------------------------------");
     }
