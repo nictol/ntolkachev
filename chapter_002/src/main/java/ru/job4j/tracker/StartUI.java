@@ -103,7 +103,7 @@ public class StartUI {
         Item[] items = new Item[100];
         items = this.tracker.findByName(name);
         for (int i = 0; i < tracker.getPosition(); i++) {
-            System.out.println(items[i].getID() + " " + items[i].getName() + " " + items[i].getDescription() + " " + items[i].getCreated());
+            System.out.println(String.format(items[i].getID()," ",items[i].getName()," ",items[i].getDescription()," ",items[i].getCreated()));
         }
         System.out.println("------------------------------------------------------");
     }
@@ -117,7 +117,7 @@ public class StartUI {
         String id = this.input.ask("Введите id заявки которую хотите найти :");
         Item item = null;
         item = this.tracker.findById(id);
-        System.out.println(item.getID() + " " + item.getName() + " " + item.getDescription() + " " + item.getCreated());
+        System.out.println(String.format(item.getID()," ",item.getName()," ",item.getDescription()," " ,item.getCreated()));
         System.out.println("------------------------------------------------------");
 
     }
@@ -157,7 +157,7 @@ public class StartUI {
         Item[] items = new Item[100];
         items = this.tracker.findAll();
         for (int i = 0; i < tracker.getPosition(); i++) {
-            System.out.println(items[i].getID() + " " + items[i].getName() + " " + items[i].getDescription() + " " + items[i].getCreated());
+            System.out.println(String.format(items[i].getID()," ",items[i].getName()," ",items[i].getDescription()," ",items[i].getCreated()));
         }
         System.out.println("---------------------------------------------");
     }
