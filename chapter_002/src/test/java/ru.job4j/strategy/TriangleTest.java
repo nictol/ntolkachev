@@ -9,15 +9,14 @@ public class TriangleTest {
 
     @Test
     public void whenDrawTriangle() {
-        Square square = new Square();
+        Triangle triangle = new Triangle();
         assertThat(
-                square.draw(),
+                triangle.draw(),
                 is(
                         new StringBuilder()
-                                .append("+++++++\n")
-                                .append("+++++++\n")
-                                .append("+++++++\n")
-                                .append("+++++++\n")
+                                .append("  +\n")
+                                .append(" +++\n")
+                                .append("+++++\n")
                                 .toString()
                 )
         );

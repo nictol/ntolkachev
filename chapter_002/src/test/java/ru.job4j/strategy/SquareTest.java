@@ -8,14 +8,16 @@ import static org.junit.Assert.assertThat;
 public class SquareTest {
     @Test
     public void whenDrawSquare() {
-        Triangle triangle = new Triangle();
+        Square square = new Square();
         assertThat(
-                triangle.draw(),
+                square.draw(),
                 is(
                         new StringBuilder()
-                        .append("  +\n")
-                        .append(" +++\n")
-                        .append("+++++\n")
+
+                                .append("+++++++\n")
+                                .append("+++++++\n")
+                                .append("+++++++\n")
+                                .append("+++++++\n")
                                 .toString()
                 )
         );
