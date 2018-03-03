@@ -157,7 +157,7 @@ public class StartUI {
         Item[] items = new Item[100];
         items = this.tracker.findAll();
         for (int i = 0; i < tracker.getPosition(); i++) {
-            System.out.println(String.format(items[i].getID()," ",items[i].getName()," ",items[i].getDescription()," ",items[i].getCreated()));
+            System.out.println(String.format(items[i].getName()," ",items[i].getID()," ",items[i].getDescription()," ",items[i].getCreated()));
         }
         System.out.println("---------------------------------------------");
     }
