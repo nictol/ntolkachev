@@ -27,6 +27,11 @@ public class StubInput implements Input {
         this.valueLong = value;
     }
 
+    public int ask(String question, int[] range) {
+        //throw new UnsupportedOperationException("Unsupported operation");
+        return -1;
+    }
+
     /**
      * Давайте рассмотрим, как работает этот метод.
      * у нас есть объект в котором содержатся заранее продуманные ответы.
@@ -46,4 +51,5 @@ public class StubInput implements Input {
     public long askDate(String question) {
         return this.valueLong[this.positionLong++];
     }
+
 }

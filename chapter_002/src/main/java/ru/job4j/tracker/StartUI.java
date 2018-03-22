@@ -13,6 +13,9 @@ public class StartUI {
      */
     private final Tracker tracker;
 
+    private int[] range = new int[]{0, 1, 2, 3, 4, 5};
+
+
     /**
      * Конструтор инициализирующий поля.
      *
@@ -34,8 +37,7 @@ public class StartUI {
         mune.fillActions();
         do {
             mune.show();
-            int key = Integer.valueOf(input.ask("Select:"));
-            mune.select(key);
+            mune.select(input.ask("Select:", range));
         } while (!"y".equals(this.input.ask("Exit?")));
     }
 
@@ -45,6 +47,6 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(), new Tracker()).init();
     }
 }
