@@ -35,6 +35,23 @@ public class StartUI {
 
         MenuTracker mune = new MenuTracker(input, tracker);
         mune.fillActions();
+        UserAction deleteAction = new UserAction() {
+            @Override
+            public int key() {
+                return 3;
+            }
+
+            @Override
+            public void execute(Input input, Tracker tracker) {
+              //todo
+            }
+
+            @Override
+            public String info() {
+                return "3. Delete";
+            }
+        };
+        mune.addAction(deleteAction);
         do {
             mune.show();
             mune.select(input.ask("Select:", range));
