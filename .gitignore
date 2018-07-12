@@ -50,3 +50,10 @@ atlassian-ide-plugin.xml
 Будет удалено .idea/misc.xml
 Будет удалено .idea/modules.xml
 Будет удалено .idea/vcs.xml
+/chapter_002/src/main/java/ru/job4j/parsing_brackets/Parsing_brackets.java
+Будет удалено chapter_002/src/main/java/ru/job4j/tracker/Item.java
+Будет удалено chapter_002/src/main/java/ru/job4j/tracker/Tracker.java
+Будет удалено "chapter_002/src/main/java/ru/job4j/\321\201hess/"
+Будет удалено chapter_002/src/main/resources/
+Будет удалено chapter_002/src/test/java/ru.job4j/chess/
+Будет удалено chapter_002/src/test/java/ru.job4j/tracker/TrackerTest.java
