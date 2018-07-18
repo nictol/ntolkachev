@@ -9,19 +9,27 @@ package ru.job4j.chess;
 
 public class Board {
 
+    public Board() {
+        this.index = 0;
+    }
+
     public Figure[] figures = new Figure[32];
+
+    private int index;
 
 
     public void add(Figure figure) {
-        for (int i = 0; i < figures.length; i++) {
-            if (figures[i] == null) {
-                figures[i] = figure;
-                break;
-            } else if (i == figures.length - 1) {
-                System.out.println("The board is full");
-                break;
-            }
+
+        if (this.index != figures.length - 1) {
+
+            figures[index] = figure;
+            this.index++;
+
+        } else {
+            System.out.println("The board is full");
+
         }
+
     }
 
     public void move(ru.job4j.chess.Cell source, ru.job4j.chess.Cell dest) throws ImpossibleMoveExсeption, OccupiedWayException, FigureNotFoundException {
@@ -43,11 +51,7 @@ public class Board {
         boolean found = false;
         for (Figure theFigure : figures) {
             found = theFigure.toString().equals(source.toString());
-            if (found) {
-                break;
-            } else {
-                throw new FigureNotFoundException("Figure not found in board");
-            }
+            if (!found) throw new FigureNotFoundException("Figure not found in board");
         }
         return found;
     }

@@ -29,17 +29,17 @@ public class BishopBlack extends Figure {
 
     private Cell[] findWay(Cell source, Cell destination) {
         Cell[] cells = new Cell[Math.abs(destination.getX() - source.getX())];
-        int X = source.getX();
-        int Y = source.getY();
+        int x = source.getX();
+        int y = source.getY();
         for (int i = 0; i != cells.length; i++) {
 
-            if (destination.getX() > X) X++;
-            else X--;
+            if (destination.getX() > x) x++;
+            else x--;
 
-            if (destination.getY() > Y) Y++;
-            else Y--;
+            if (destination.getY() > y) y++;
+            else y--;
 
-            cells[i] = new Cell(X, Y);
+            cells[i] = new Cell(x, y);
         }
         return cells;
     }
