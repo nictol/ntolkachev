@@ -1,23 +1,52 @@
 package ru.job4j.coffee_machine;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Сoffee_machine {
 
-    List<Integer> change(int value, int price) {
+    int[] change(int value, int price) {
 
-        int[] coins = {10, 5, 2, 1};
         int change = value - price;
 
-        List result = new ArrayList<Integer>();
+        int tens = change / 10;
+        change = change % 10;
 
-        for (int theCoin : coins) {
+        int fives = change / 5;
+        change = change % 5;
 
-            int amountOfThisCoint = change / theCoin;
-            change = change % theCoin;
-            for (int i = 0; i < amountOfThisCoint; i++) result.add(theCoin);
+        int two = change / 2;
+        change = change % 2;
 
+        int one = change;
+
+        int i = 0;
+        int[] result = new int[10000];
+
+
+        if (tens != 0) {
+            for (int j = 0; j < tens; j++) {
+                result[i] = 10;
+                i++;
+            }
+        }
+
+        if (fives != 0) {
+            for (int j = 0; j < fives; j++) {
+                result[i] = 5;
+                i++;
+            }
+        }
+
+        if (two != 0) {
+            for (int j = 0; j < two; j++) {
+                result[i] = 2;
+                i++;
+            }
+        }
+
+        if (one != 0) {
+            for (int j = 0; j < one; j++) {
+                result[i] = 1;
+                i++;
+            }
         }
 
         return result;
