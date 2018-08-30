@@ -1,11 +1,10 @@
-
-
-package ru.job4j.chess;
+package chess.test.java.ru.job4j.chess;
 
 import org.junit.Test;
-import ru.job4j.chess.firuges.black.BishopBlack;
+import chess.main.java.ru.job4j.chess.firuges.black.BishopBlack;
 
 import java.util.Arrays;
+import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
