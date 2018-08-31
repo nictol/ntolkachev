@@ -18,7 +18,6 @@ public class Coffee_machineTest {
         List expexted = new ArrayList<Integer>();
         expexted.add(10);
         expexted.add(5);
-
         assertThat(result, is(expexted));
     }
 

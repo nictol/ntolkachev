@@ -1,7 +1,5 @@
 package ru.job4j.chess;
 
-import ru.job4j.chess.firuges.Cell;
-
 /**
  * @author Tolkachev Nikita (nictol76@yandex.ru)
  * @version $Id$
@@ -10,24 +8,23 @@ import ru.job4j.chess.firuges.Cell;
 
 
 public abstract class Figure {
-    final ru.job4j.chess.firuges.Cell position;
+    final Cell position;
 
-
-    Figure(ru.job4j.chess.firuges.Cell position) {
+    public Figure(Cell position) {
         this.position = position;
     }
 
-    protected abstract ru.job4j.chess.firuges.Cell[] way(ru.job4j.chess.firuges.Cell source, ru.job4j.chess.firuges.Cell dest) throws ImpossibleMoveExсeption;
+    protected abstract Cell[] way(Cell source, Cell dest) throws ImpossibleMoveExсeption;
 
-    protected abstract ru.job4j.chess.firuges.Figure copy(ru.job4j.chess.firuges.Cell dest);
+    protected abstract Figure copy(Cell dest);
 
     @Override
     public String toString() {
-
         return String.valueOf(this.position);
     }
 
     public Cell getPosition() {
+
         return this.position;
     }
 }

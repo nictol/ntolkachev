@@ -1,6 +1,7 @@
 .DS_Store
 **/target/*
 *.iml
+.idea/
 
 # User-specific stuff:
 .idea/**/workspace.xml
@@ -42,18 +43,5 @@ atlassian-ide-plugin.xml
 
 # Cursive Clojure plugin
 .idea/replstate.xml
-Будет удалено .idea/checkstyle-idea.xml
-Будет удалено .idea/compiler.xml
-Будет удалено .idea/copyright/
-Будет удалено .idea/encodings.xml
-Будет удалено .idea/inspectionProfiles/
-Будет удалено .idea/misc.xml
-Будет удалено .idea/modules.xml
-Будет удалено .idea/vcs.xml
 /chapter_002/src/main/java/ru/job4j/parsing_brackets/Parsing_brackets.java
-Будет удалено chapter_002/src/main/java/ru/job4j/tracker/Item.java
-Будет удалено chapter_002/src/main/java/ru/job4j/tracker/Tracker.java
-Будет удалено "chapter_002/src/main/java/ru/job4j/\321\201hess/"
-Будет удалено chapter_002/src/main/resources/
-Будет удалено chapter_002/src/test/java/ru.job4j/ru.job4j.chess/
-Будет удалено chapter_002/src/test/java/ru.job4j/tracker/TrackerTest.java
+
