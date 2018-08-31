@@ -1,7 +1,6 @@
-package chess.test.java.ru.job4j.chess;
+package ru.job4j.chess;
 
-import org.junit.Test;
-import chess.main.java.ru.job4j.chess.firuges.black.BishopBlack;
+import ru.job4j.chess.firuges.black.BishopBlack;
 
 import java.util.Arrays;
 import org.junit.Test;

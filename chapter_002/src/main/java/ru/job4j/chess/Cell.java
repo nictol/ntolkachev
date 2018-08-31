@@ -1,4 +1,4 @@
-package chess.main.java.ru.job4j.chess;
+package ru.job4j.chess;
 
 /**
  * @author Tolkachev Nikita (nictol76@yandex.ru)

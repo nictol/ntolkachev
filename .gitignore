@@ -55,5 +55,5 @@ atlassian-ide-plugin.xml
 Будет удалено chapter_002/src/main/java/ru/job4j/tracker/Tracker.java
 Будет удалено "chapter_002/src/main/java/ru/job4j/\321\201hess/"
 Будет удалено chapter_002/src/main/resources/
-Будет удалено chapter_002/src/test/java/ru.job4j/chess/
+Будет удалено chapter_002/src/test/java/ru.job4j/ru.job4j.chess/
 Будет удалено chapter_002/src/test/java/ru.job4j/tracker/TrackerTest.java
