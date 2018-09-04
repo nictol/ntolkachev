@@ -45,3 +45,4 @@ atlassian-ide-plugin.xml
 .idea/replstate.xml
 /chapter_002/src/main/java/ru/job4j/parsing_brackets/Parsing_brackets.java
 
+.idea/compiler.xml
