@@ -8,12 +8,12 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class Coffee_machineTest {
+public class CoffeeMachineTest {
 
     @Test
     public void testOne() {
 
-        Сoffee_machine machne01 = new Сoffee_machine();
+        CoffeeMachine machne01 = new CoffeeMachine();
         List result = machne01.change(50, 35);
         List expexted = new ArrayList<Integer>();
         expexted.add(10);
@@ -24,7 +24,7 @@ public class Coffee_machineTest {
     @Test
     public void testTwo() {
 
-        Сoffee_machine machne01 = new Сoffee_machine();
+        CoffeeMachine machne01 = new CoffeeMachine();
         List result = machne01.change(100, 99);
         List expexted = new ArrayList<Integer>();
         expexted.add(1);
@@ -36,7 +36,7 @@ public class Coffee_machineTest {
     @Test
     public void testThree() {
 
-        Сoffee_machine machne01 = new Сoffee_machine();
+        CoffeeMachine machne01 = new CoffeeMachine();
         List result = machne01.change(100, 100);
         List expexted = new ArrayList<Integer>();
 
@@ -47,7 +47,7 @@ public class Coffee_machineTest {
     @Test
     public void testFour() {
 
-        Сoffee_machine machne01 = new Сoffee_machine();
+        CoffeeMachine machne01 = new CoffeeMachine();
         List result = machne01.change(50, 10);
         List expexted = new ArrayList<Integer>();
 
@@ -62,7 +62,7 @@ public class Coffee_machineTest {
     @Test
     public void testFive() {
 
-        Сoffee_machine machne01 = new Сoffee_machine();
+        CoffeeMachine machne01 = new CoffeeMachine();
         List result = machne01.change(50, 0);
         List expexted = new ArrayList<Integer>();
 

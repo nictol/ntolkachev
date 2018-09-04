@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 public class Item {
-    private String ID;
+    private String id;
     private String name;
     private String description;
     private long created;
@@ -17,13 +17,13 @@ public class Item {
      * @param id уникальный индентификатор
      */
     public void setId(String id) {
-        this.ID = id;
+        this.id = id;
     }
     /**
      * Метод реализующий возврат уникального id
      */
     public String getID() {
-        return this.ID;
+        return this.id;
     }
     /**
      * Установить имя элемента
