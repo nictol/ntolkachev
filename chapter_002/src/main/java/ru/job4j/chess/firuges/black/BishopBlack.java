@@ -2,7 +2,7 @@ package ru.job4j.chess.firuges.black;
 
 import ru.job4j.chess.Cell;
 import ru.job4j.chess.Figure;
-import ru.job4j.chess.ImpossibleMoveExсeption;
+import ru.job4j.chess.ImpossibleMoveException;
 
 /**
  * @author Tolkachev Nikita (nictol76@yandex.ru)
@@ -17,12 +17,12 @@ public class BishopBlack extends Figure {
   }
 
   @Override
-  public Cell[] way(Cell source, Cell destination) throws ImpossibleMoveExсeption {
+  public Cell[] way(Cell source, Cell destination) throws ImpossibleMoveException {
     Cell[] cell;
     if (destination.getX() - source.getX() == destination.getY() - source.getY()) {
       cell = findWay(source, destination);
     } else {
-      throw new ImpossibleMoveExсeption("Impossible move the figure Bishop");
+      throw new ImpossibleMoveException("Impossible move the figure Bishop");
     }
     return cell;
   }

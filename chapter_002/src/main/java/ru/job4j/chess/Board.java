@@ -15,7 +15,7 @@ public class Board {
     this.index = 0;
   }
 
-  public void move(Cell source, Cell dest) throws ImpossibleMoveExсeption, OccupiedWayException, FigureNotFoundException {
+  public void move(Cell source, Cell dest) throws ImpossibleMoveException, OccupiedWayException, FigureNotFoundException {
     if (checkAll(source, dest)) {
       Figure figure = getFigure(source);
       Figure figureCopy = figure.copy(dest);
@@ -24,7 +24,7 @@ public class Board {
     }
   }
 
-  private boolean checkAll(Cell source, Cell dest) throws ImpossibleMoveExсeption, OccupiedWayException, FigureNotFoundException {
+  private boolean checkAll(Cell source, Cell dest) throws ImpossibleMoveException, OccupiedWayException, FigureNotFoundException {
     return checkFigureFound(source) && !checkOccupiedWayException(source, dest);
   }
 
@@ -70,7 +70,7 @@ public class Board {
     return found;
   }
 
-  private boolean checkOccupiedWayException(Cell source, Cell dest) throws OccupiedWayException, ImpossibleMoveExсeption {
+  private boolean checkOccupiedWayException(Cell source, Cell dest) throws OccupiedWayException, ImpossibleMoveException {
     boolean occupied = false;
     Figure figure = getFigure(source);
     Cell[] cells = figure.way(source, dest);

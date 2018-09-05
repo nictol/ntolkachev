@@ -16,8 +16,8 @@ import static org.junit.Assert.assertThat;
 
 public class ChessTest {
 
-    @Test(expected = ImpossibleMoveExсeption.class)
-    public void whenFigureWayWrong() throws ImpossibleMoveExсeption {
+    @Test(expected = ImpossibleMoveException.class)
+    public void whenFigureWayWrong() throws ImpossibleMoveException {
         Cell c = new Cell(1, 4);
         Cell c2 = new Cell(3, 4);
         BishopBlack bishop = new BishopBlack(c);
@@ -26,7 +26,7 @@ public class ChessTest {
 
 
     @Test
-    public void whenFigureWayCorrect() throws ImpossibleMoveExсeption {
+    public void whenFigureWayCorrect() throws ImpossibleMoveException {
         Cell c = new Cell(2, 2);
         Cell c1 = new Cell(3, 3);
         Cell c2 = new Cell(4, 4);
@@ -46,7 +46,7 @@ public class ChessTest {
 
     @Test(expected = FigureNotFoundException.class)
 
-    public void whenFigureNotFound() throws OccupiedWayException, ImpossibleMoveExсeption, FigureNotFoundException {
+    public void whenFigureNotFound() throws OccupiedWayException, ImpossibleMoveException, FigureNotFoundException {
         Board board = new Board();
         BishopBlack bishop = new BishopBlack(new Cell(0, 0));
         board.add(bishop);
@@ -56,7 +56,7 @@ public class ChessTest {
 
 
     @Test(expected = OccupiedWayException.class)
-    public void whenWayIsOccupied() throws OccupiedWayException, ImpossibleMoveExсeption, FigureNotFoundException {
+    public void whenWayIsOccupied() throws OccupiedWayException, ImpossibleMoveException, FigureNotFoundException {
         Board board = new Board();
         BishopBlack bishop = new BishopBlack(new Cell(0, 0));
         BishopBlack bishop1 = new BishopBlack(new Cell(1, 1));
@@ -67,8 +67,8 @@ public class ChessTest {
     }
 
 
-    @Test(expected = ImpossibleMoveExсeption.class)
-    public void whenMoveIsWrong() throws OccupiedWayException, ImpossibleMoveExсeption, FigureNotFoundException {
+    @Test(expected = ImpossibleMoveException.class)
+    public void whenMoveIsWrong() throws OccupiedWayException, ImpossibleMoveException, FigureNotFoundException {
         Board board = new Board();
         BishopBlack bishop = new BishopBlack(new Cell(0, 0));
         board.add(bishop);
@@ -78,7 +78,7 @@ public class ChessTest {
 
 
     @Test
-    public void whenMoveFigure() throws OccupiedWayException, ImpossibleMoveExсeption, FigureNotFoundException {
+    public void whenMoveFigure() throws OccupiedWayException, ImpossibleMoveException, FigureNotFoundException {
         Board board = new Board();
         BishopBlack bishop = new BishopBlack(new Cell(0, 0));
         board.add(bishop);
