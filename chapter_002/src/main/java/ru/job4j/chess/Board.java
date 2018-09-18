@@ -65,6 +65,8 @@ public class Board {
       found = theFigure.toString().equals(source.toString());
       if (!found) {
         throw new FigureNotFoundException("Figure not found in board");
+      } else {
+        break;
       }
     }
     return found;

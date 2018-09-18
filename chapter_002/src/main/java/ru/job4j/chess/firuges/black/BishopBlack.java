@@ -19,14 +19,12 @@ public class BishopBlack extends Figure {
   @Override
   public Cell[] way(Cell source, Cell destination) throws ImpossibleMoveException {
     Cell[] cell;
-    if (destination.getX() - source.getX() == destination.getY() - source.getY()) {
-      cell = findWay(source, destination);
-    } else {
+    if (destination.getX() - source.getX() != destination.getY() - source.getY()) {
       throw new ImpossibleMoveException("Impossible move the figure Bishop");
     }
+    cell = findWay(source, destination);
     return cell;
   }
-
 
   private Cell[] findWay(Cell source, Cell destination) {
     Cell[] cells = new Cell[Math.abs(destination.getX() - source.getX())];
