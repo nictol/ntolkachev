@@ -31,8 +31,9 @@ public class Board {
   private Figure getFigure(Cell source) {
     Figure figure = null;
     for (Figure theFigure : figures) {
-      if (theFigure != null && theFigure.toString().equals(source.toString())) {
+      if (theFigure != null && source.equalsCell(theFigure.getPosition())) {
         figure = theFigure;
+        break;
       }
     }
     return figure;

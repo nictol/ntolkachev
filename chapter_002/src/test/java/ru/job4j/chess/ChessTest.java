@@ -78,4 +78,14 @@ public class ChessTest {
     Cell c = new Cell(2, 2);
     board.move(bishop.getPosition(), c);
   }
+
+  @Test
+  public void test() {
+    Board board = new Board();
+    BishopBlack bishop = new BishopBlack(new Cell(5, 5));
+    board.add(bishop);
+    Cell c = new Cell(8, 2);
+    board.move(bishop.getPosition(), c);
+    assertThat(board.figures[1].toString(), is(c.toString()));
+  }
 }

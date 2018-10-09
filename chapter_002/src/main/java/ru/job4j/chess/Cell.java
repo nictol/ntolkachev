@@ -30,4 +30,8 @@ public class Cell {
 
         return this.x + "  " + this.y;
     }
+
+    public boolean equalsCell(Cell cell) {
+        return ((cell.x == this.x) & (cell.y == this.y)) ? true : false;
+    }
 }
