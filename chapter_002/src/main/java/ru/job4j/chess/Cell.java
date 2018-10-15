@@ -17,6 +17,10 @@ public class Cell {
         this.y = y;
     }
 
+    public Boolean equalsCell(Cell cell) {
+        return (this.getX() == cell.getX()) && (this.getY() == cell.getY());
+    }
+
     public int getX() {
         return x;
     }
@@ -25,9 +29,4 @@ public class Cell {
         return y;
     }
 
-    @Override
-    public String toString() {
-
-        return this.x + "  " + this.y;
-    }
 }

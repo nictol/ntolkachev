@@ -14,17 +14,13 @@ public abstract class Figure {
         this.position = position;
     }
 
-    protected abstract Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException;
+    public abstract boolean equalsFigure(Figure figure);
+
+    public Cell getPosition() {
+        return this.position;
+    }
 
     protected abstract Figure copy(Cell dest);
 
-    @Override
-    public String toString() {
-        return String.valueOf(this.position);
-    }
-
-    public Cell getPosition() {
-
-        return this.position;
-    }
+    protected abstract Cell[] way(Cell source, Cell dest) throws ImpossibleMoveException;
 }

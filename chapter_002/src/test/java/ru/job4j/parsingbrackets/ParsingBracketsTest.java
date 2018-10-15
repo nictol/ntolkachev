@@ -1,4 +1,4 @@
-package ru.job4j.parsing_brackets;
+package ru.job4j.parsingbrackets;
 
 public class ParsingBracketsTest {
 }
