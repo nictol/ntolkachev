@@ -6,7 +6,6 @@ package ru.job4j.chess;
  * @since 0.1
  */
 
-
 public class Cell {
 
     private int x;
