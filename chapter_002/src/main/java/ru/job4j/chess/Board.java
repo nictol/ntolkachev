@@ -28,7 +28,6 @@ public class Board {
         if (checkAll(source, dest)) {
             Figure figure = getFigure(source);
             this.add(figure.copy(dest));
-            this.deleteFigure(figure);
         }
     }
 
