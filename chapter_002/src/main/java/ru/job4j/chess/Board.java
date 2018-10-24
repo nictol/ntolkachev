@@ -15,6 +15,15 @@ public class Board {
         this.index = 0;
     }
 
+    public void add(Figure figure) {
+        if (this.index != figures.length - 1) {
+            figures[index] = figure;
+            this.index++;
+        } else {
+            System.out.println("The board is full");
+        }
+    }
+
     public void move(Cell source, Cell dest) throws ImpossibleMoveException, OccupiedWayException, FigureNotFoundException {
         if (checkAll(source, dest)) {
             Figure figure = getFigure(source);
@@ -36,27 +45,6 @@ public class Board {
             }
         }
         return figure;
-    }
-
-    public void add(Figure figure) {
-
-        if (this.index != figures.length - 1) {
-
-            figures[index] = figure;
-            this.index++;
-
-        } else {
-            System.out.println("The board is full");
-        }
-
-    }
-
-    private void deleteFigure(Figure figure) {
-        for (int i = 0; i < figures.length; i++) {
-            if (figures[i] != null && figures[i].equalsFigure(figure)) {
-                figures[i] = null;
-            }
-        }
     }
 
     private boolean checkFigureFound(Cell source) throws FigureNotFoundException {
@@ -87,5 +75,13 @@ public class Board {
             }
         }
         return occupied;
+    }
+
+    private void deleteFigure(Figure figure) {
+        for (int i = 0; i < figures.length; i++) {
+            if (figures[i] != null && figures[i].equalsFigure(figure)) {
+                figures[i] = null;
+            }
+        }
     }
 }
