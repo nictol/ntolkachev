@@ -3,16 +3,15 @@ package ru.job4j.search;
 import java.util.LinkedList;
 
 public class PriorityQueue {
-    private LinkedList<Task> tasks = new LinkedList<>();
+    private LinkedList<Task> tasks = new LinkedList<>(); //Список задач
 
     /**
-     * Метод должен вставлять в нужную позицию элемент.
-     * Позиция определять по полю приоритет.
-     * Для вставик использовать add(int index, E value)
+     * Метод вставляет задачу в нужную позицию в списке.
+     * Позиция определяется по полю приоритет.
      *
      * @param task задача
      */
-    public void put(Task task) {
+    public void putInList(Task task) {
         if (this.tasks.peekFirst() == null) {
             this.tasks.add(task);
         } else {
@@ -22,12 +21,14 @@ public class PriorityQueue {
                 index++;
                 currentTask = this.tasks.get(index);
             }
-
             this.tasks.add(index, task);
         }
     }
 
-    public Task take() {
+    /**
+     * Получить заявку с наивысшим приоритетом
+     */
+    public Task takePriorityTast() {
         return this.tasks.poll();
     }
 }
