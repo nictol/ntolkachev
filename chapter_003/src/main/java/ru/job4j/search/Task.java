@@ -4,8 +4,14 @@ package ru.job4j.search;
  * Класс для задач
  */
 public class Task {
-    private String desc;  //Описание задачи
-    private int priority; //Приоритет задачи
+    /*
+     *  Описание задачи
+     */
+    private String desc;
+    /*
+     *  Приоритет задачи
+     */
+    private int priority;
 
     /**
      * @param desc     - описание задачи
