@@ -17,9 +17,11 @@ public class PriorityQueue {
         } else {
             int index = 0;
             Task currentTask = this.tasks.getFirst();
-            while (currentTask.getPriority() < task.getPriority() && tasks.size() > index + 1) {
+            while (currentTask.getPriority() <= task.getPriority() && index  < tasks.size()) {
                 index++;
-                currentTask = this.tasks.get(index);
+                if (index < tasks.size()) {
+                    currentTask = this.tasks.get(index);
+                }
             }
             this.tasks.add(index, task);
         }
@@ -27,8 +29,10 @@ public class PriorityQueue {
 
     /**
      * Получить заявку с наивысшим приоритетом
+     *
+     * @return Задача с наивысшем приоритетом
      */
-    public Task takePriorityTast() {
+    public Task takePriorityTask() {
         return this.tasks.poll();
     }
 }
