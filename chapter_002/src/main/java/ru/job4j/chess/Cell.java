@@ -6,7 +6,6 @@ package ru.job4j.chess;
  * @since 0.1
  */
 
-
 public class Cell {
 
     private int x;
@@ -17,6 +16,10 @@ public class Cell {
         this.y = y;
     }
 
+    public Boolean equalsCell(Cell cell) {
+        return (this.getX() == cell.getX()) && (this.getY() == cell.getY());
+    }
+
     public int getX() {
         return x;
     }
@@ -25,13 +28,4 @@ public class Cell {
         return y;
     }
 
-    @Override
-    public String toString() {
-
-        return this.x + "  " + this.y;
-    }
-
-    public boolean equalsCell(Cell cell) {
-        return ((cell.x == this.x) & (cell.y == this.y)) ? true : false;
-    }
 }

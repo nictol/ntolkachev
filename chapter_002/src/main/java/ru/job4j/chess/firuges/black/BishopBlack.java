@@ -12,45 +12,49 @@ import ru.job4j.chess.ImpossibleMoveException;
 
 public class BishopBlack extends Figure {
 
-  public BishopBlack(Cell position) {
-    super(position);
-  }
-
-  @Override
-  public Cell[] way(Cell source, Cell destination) throws ImpossibleMoveException {
-    Cell[] cell;
-    if (destination.getX() - source.getX() != destination.getY() - source.getY()) {
-      throw new ImpossibleMoveException("Impossible move the figure Bishop");
+    public BishopBlack(Cell position) {
+        super(position);
     }
-    cell = findWay(source, destination);
-    return cell;
-  }
 
-  private Cell[] findWay(Cell source, Cell destination) {
-    Cell[] cells = new Cell[Math.abs(destination.getX() - source.getX())];
-    int x = source.getX();
-    int y = source.getY();
-    for (int i = 0; i != cells.length; i++) {
-
-      if (destination.getX() > x) {
-        x++;
-      } else {
-        x--;
-      }
-
-      if (destination.getY() > y) {
-        y++;
-      } else {
-        y--;
-      }
-
-      cells[i] = new Cell(x, y);
+    @Override
+    public boolean equalsFigure(Figure figure) {
+        return (this.getPosition().getX() == figure.getPosition().getX()) && (this.getPosition().getY() == figure.getPosition().getY());
     }
-    return cells;
-  }
 
-  protected Figure copy(Cell destination) {
-    return new BishopBlack(destination);
-  }
+    protected Figure copy(Cell destination) {
+        return new BishopBlack(destination);
+    }
 
+    @Override
+    public Cell[] way(Cell source, Cell destination) throws ImpossibleMoveException {
+        Cell[] cell;
+        if (Math.abs(destination.getX() - source.getX()) != Math.abs(destination.getY() - source.getY())) {
+            throw new ImpossibleMoveException("Impossible move the figure Bishop");
+        }
+        cell = findWay(source, destination);
+        return cell;
+    }
+
+    private Cell[] findWay(Cell source, Cell destination) {
+        Cell[] cells = new Cell[Math.abs(destination.getX() - source.getX())];
+        int x = source.getX();
+        int y = source.getY();
+        for (int i = 0; i != cells.length; i++) {
+
+            if (destination.getX() > x) {
+                x++;
+            } else {
+                x--;
+            }
+
+            if (destination.getY() > y) {
+                y++;
+            } else {
+                y--;
+            }
+
+            cells[i] = new Cell(x, y);
+        }
+        return cells;
+    }
 }

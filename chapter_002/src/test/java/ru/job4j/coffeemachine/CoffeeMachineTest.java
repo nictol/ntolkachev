@@ -1,4 +1,4 @@
-package ru.job4j.coffee_machine;
+package ru.job4j.coffeemachine;
 
 import org.junit.Test;
 

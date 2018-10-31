@@ -14,10 +14,9 @@ public class PaintTest {
 
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-
-
     @Test
     public void whenDrawSquare() {
+        System.setOut(new PrintStream(out));
         new Paint().draw(new Square());
         assertThat(
                 new String(out.toByteArray()),
@@ -35,6 +34,7 @@ public class PaintTest {
 
     @Test
     public void whenDrawTriangle() {
+        System.setOut(new PrintStream(out));
         new Paint().draw(new Triangle());
         assertThat(
                 new String(out.toByteArray()),
