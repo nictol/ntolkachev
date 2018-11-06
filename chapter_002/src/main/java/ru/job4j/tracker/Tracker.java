@@ -94,10 +94,10 @@ public class Tracker {
   }
 
   /**
-   * Етод возвращающий текущую позицию
+   * Метод возвращающий текущую позицию
    */
   public int getPosition() {
-    return this.position + 1;
+    return this.position;
   }
 
   /**

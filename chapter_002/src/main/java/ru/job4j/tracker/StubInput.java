@@ -29,7 +29,18 @@ public class StubInput implements Input {
 
     public int ask(String question, int[] range) {
         //throw new UnsupportedOperationException("Unsupported operation");
-        return -1;
+        boolean isInRange = false;
+        int value = Integer.valueOf(this.ask(question));
+        for (int item :range) {
+            if (value == item) {
+                isInRange = true;
+                break;
+            }
+        }
+        if (!isInRange) {
+            throw new MenOutExeption("Ввод должен быть от 0 до 5.");
+        }
+        return value;
     }
 
     /**
