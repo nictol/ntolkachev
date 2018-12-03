@@ -31,8 +31,10 @@ public class ConvertList2ArrayTest {
                 4
         );
         int[][] expect = {
-                {1, 2, 3, 4},
-                {5, 6, 7, 8}
+                {1, 2},
+                {3, 4},
+                {5, 6},
+                {7, 8}
         };
         assertThat(result, is(expect));
     }
@@ -44,9 +46,18 @@ public class ConvertList2ArrayTest {
                 Arrays.asList(1, 2, 3, 4, 5),
                 6
         );
-        int[][] expect = {
-                {1, 2, 3, 4, 5, 0}
-        };
+        int[][] expect = {{1}, {2}, {3}, {4}, {5}, {0}};
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void when7Elements9RowsThen1x9MatrixWith2ZeroElement() {
+        ConvertList2Array list = new ConvertList2Array();
+        int[][] result = list.toArray(
+                Arrays.asList(1, 2, 3, 4, 5, 6, 7),
+                9
+        );
+        int[][] expect = {{1}, {2}, {3}, {4}, {5}, {6}, {7}, {0}, {0},};
         assertThat(result, is(expect));
     }
 }
