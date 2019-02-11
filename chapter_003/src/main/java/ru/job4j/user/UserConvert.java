@@ -11,7 +11,6 @@ import java.util.List;
 public class UserConvert {
     public HashMap<Integer, User> process (List<User> userList) {
         HashMap <Integer, User> mapUsers = new HashMap<>();
-        Integer keyForMap = 0;
         for (Iterator <User> iterator = userList.iterator(); iterator.hasNext();) {
             User user = iterator.next();
             mapUsers.put( user.getId() , user);
