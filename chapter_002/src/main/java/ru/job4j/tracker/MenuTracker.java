@@ -1,5 +1,8 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class EditItem extends BaseAction {
 
     protected EditItem(int key, String name) {
@@ -21,7 +24,7 @@ public class MenuTracker {
 
     private Input input;
     private Tracker tracker;
-    private UserAction[] actions = new UserAction[7];
+    private List<UserAction> actions = new ArrayList<>();
     private int position = 0;
 
     public MenuTracker(Input input, Tracker tracker) {
@@ -30,20 +33,20 @@ public class MenuTracker {
     }
 
     public void fillActions() {
-        this.actions[position++] = new AddItem(0, "Add the new item");
-        this.actions[position++] = new ShowItem(1, "Show all items");
-        this.actions[position++] = new EditItem(2, "Edit item");
-        this.actions[position++] = new DeleteItem(3, "Delete item");
-        this.actions[position++] = new FindItemById(4, "Find item by Id");
-        this.actions[position++] = new FindItemByName(5, "Find item by Name");
+        this.actions.add(new AddItem(0, "Add the new item"));
+        this.actions.add(new ShowItem(1, "Show all items"));
+        this.actions.add(new EditItem(2, "Edit item"));
+        this.actions.add(new DeleteItem(3, "Delete item"));
+        this.actions.add(new FindItemById(4, "Find item by Id"));
+        this.actions.add(new FindItemByName(5, "Find item by Name"));
     }
 
     public void addAction(UserAction action) {
-        this.actions[position++] = action;
+        this.actions.add(action);
     }
 
     public void select(int key) {
-        this.actions[key].execute(this.input, this.tracker);
+        this.actions.get(key).execute(this.input, this.tracker);
     }
 
     public void show() {
@@ -79,10 +82,10 @@ public class MenuTracker {
 
         @Override
         public void execute(Input input, Tracker tracker) {
-            Item[] items = new Item[100];
+            List<Item> items = new ArrayList<>();
             items = tracker.findAll();
-            for (int i = 0; i < tracker.getPosition(); i++) {
-                System.out.println(String.format(items[i].getName(), " ", items[i].getID()));
+            for (Item item : items) {
+                System.out.println(String.format(item.getName(), " ", item.getID()));
             }
         }
 
@@ -128,10 +131,10 @@ public class MenuTracker {
         @Override
         public void execute(Input input, Tracker tracker) {
             String name = input.ask("Введите имя заявки которую хотите найти :");
-            Item[] items = new Item[100];
+            List<Item> items = new ArrayList<>();
             items = tracker.findByName(name);
-            for (int i = 0; i < tracker.getPosition(); i++) {
-                System.out.println(String.format(items[i].getID(), " ", items[i].getName(), " ", items[i].getDescription(), " ", items[i].getCreated()));
+            for (Item item : items) {
+                System.out.println(String.format(item.getID(), " ", item.getName(), " ", item.getDescription(), " ", item.getCreated()));
             }
         }
 

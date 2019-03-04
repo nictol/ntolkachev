@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Tracker {
@@ -9,14 +11,9 @@ public class Tracker {
    * @since 0.1
    */
   /**
-   * Массив для хранение заявок.
+   * Список для хранение заявок.
    */
-  private final Item[] items = new Item[100];
-
-  /**
-   * Указатель ячейки для новой заявки.
-   */
-  private int position = 0;
+  private final List<Item> items = new ArrayList<>();
 
   /**
    * Метод реализущий добавление заявки в хранилище
@@ -25,7 +22,7 @@ public class Tracker {
    */
   public Item add(Item item) {
     item.setId(this.generateId());
-    this.items[this.position++] = item;
+    this.items.add(item);
     return item;
   }
 
@@ -51,57 +48,42 @@ public class Tracker {
    * @param id
    */
   public void delete(String id) {
-    for (int i = 0; i < this.items.length; i++) {
-      if (this.items[i].getID().equals(id)) {
-        System.arraycopy(this.items, i + 1, this.items, i, position - i - 1);
-        this.position--;
-        break;
+    Item deletedItem = null;
+    for (Item item : this.items) {
+      if (item.getID().equals(id)) {
+        deletedItem = item;
       }
     }
+    this.items.remove(deletedItem);
   }
 
   /**
-   * Метод возвращает все элементы, кроме тех, которые null
+   * Метод возвращает все элементы
    *
-   * @return массив не нулевых элементов
+   * @return список не нулевых элементов
    */
-  public Item[] findAll() {
-    Item[] itemsCopy = new Item[100];
-    for (int i = 0; i < this.items.length; i++) {
-      if (this.items[i] != null) {
-        itemsCopy[i] = items[i];
-      }
-    }
-    return itemsCopy;
+  public List<Item> findAll() {
+    return this.items;
   }
 
   /**
    * Метод ищет элемент по имени
    *
    * @param key ключ по которому ищется элемент
-   * @return массив элементов с искомым именем
+   * @return список элементов с искомым именем
    */
-  public Item[] findByName(String key) {
-    Item[] itemsCopy = new Item[100];
-    int j = 0;
-    for (int i = 0; i < position; i++) {
-      if (items[i].getName().equals(key)) {
-        itemsCopy[j] = items[i];
-        j++;
+  public List<Item> findByName(String key) {
+    List<Item> findResult = new ArrayList<>();
+    for (Item item : this.items) {
+      if (item.getName().equals(key)) {
+         findResult.add(item);
       }
     }
-    return itemsCopy;
+    return findResult;
   }
 
   /**
-   * Метод возвращающий текущую позицию
-   */
-  public int getPosition() {
-    return this.position;
-  }
-
-  /**
-   * Метод заменяет элемент по ключу
+   * Метод заменяет элемент по ID
    *
    * @param id   Уникальный ключ
    * @param item Элемент на замену
@@ -116,17 +98,16 @@ public class Tracker {
   }
 
   /**
-   * Метод ищет элемент по индексу
+   * Метод ищет элемент по ID
    *
    * @param id ключ по которому ищется элемент
    * @return элемент с искомым ключом
    */
   Item findById(String id) {
     Item result = null;
-    for (int i = 0; i < position; i++) {
-      if (items[i].getID().equals(id)) {
-        result = items[i];
-        break;
+    for (Item item : this.items) {
+      if (item.getID().equals(id)) {
+        result = item;
       }
     }
     return result;

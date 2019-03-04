@@ -32,7 +32,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         Input input = new StubInput(new String[]{"0", "test name", "desc", "y"}, new long[]{451});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findAll()[0].getName(), is("test name"));
+        assertThat(tracker.findAll().get(0).getName(), is("test name"));
     }
 
     @Test
@@ -69,7 +69,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("test name", "qaz", 451));
         Input input = new StubInput(new String[]{"5", item.getName(), "y"}, new long[]{});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findByName(item.getName())[0].getName(), is("test name"));
+        assertThat(tracker.findByName(item.getName()).get(0).getName(), is("test name"));
     }
 
 
@@ -84,13 +84,13 @@ public class StartUITest {
                 new String(out.toByteArray()),
                 is(
                         new StringBuilder()
-                                .append("0 : Add the new item\n")
-                                .append("1 : Show all items\n")
-                                .append("2 : Edit item\n")
-                                .append("3 : Delete item\n")
-                                .append("4 : Find item by Id\n")
-                                .append("5 : Find item by Name\n")
-                                .append("test name\n")
+                                .append("0 : Add the new item\r\n")
+                                .append("1 : Show all items\r\n")
+                                .append("2 : Edit item\r\n")
+                                .append("3 : Delete item\r\n")
+                                .append("4 : Find item by Id\r\n")
+                                .append("5 : Find item by Name\r\n")
+                                .append("test name\r\n")
                                 .toString()
                 )
         );
