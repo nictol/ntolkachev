@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -48,13 +49,13 @@ public class Tracker {
    * @param id
    */
   public void delete(String id) {
-    Item deletedItem = null;
-    for (Item item : this.items) {
+    Iterator<Item> itemIterator = this.items.iterator();
+    while (itemIterator.hasNext()) {
+      Item item = itemIterator.next();
       if (item.getID().equals(id)) {
-        deletedItem = item;
+        itemIterator.remove();
       }
     }
-    this.items.remove(deletedItem);
   }
 
   /**
@@ -90,11 +91,8 @@ public class Tracker {
    */
   public void replace(String id, Item item) {
     Item cell = this.findById(id);
-    //cell.setId(item.getID());
-    cell.setName(item.getName());
-    cell.setDesciption(item.getDescription());
-    cell.setCreated(item.getCreated());
-    cell.setComments(item.getComments());
+    item.setId(this.generateId());
+    this.items.set(this.items.indexOf(cell), item);
   }
 
   /**
