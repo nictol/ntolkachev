@@ -90,9 +90,13 @@ public class Tracker {
    * @param item Элемент на замену
    */
   public void replace(String id, Item item) {
-    Item cell = this.findById(id);
+    Integer indexOfReplacedCell = -1;
+    for (Item theItem : this.items) {
+      indexOfReplacedCell++;
+      if (theItem.getID() == id) break;
+    }
     item.setId(this.generateId());
-    this.items.set(this.items.indexOf(cell), item);
+    this.items.set(indexOfReplacedCell, item);
   }
 
   /**
