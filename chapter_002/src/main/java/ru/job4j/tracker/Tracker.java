@@ -1,10 +1,12 @@
 package ru.job4j.tracker;
 
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.apache.commons.lang3.StringUtils;
 
 public class Tracker {
   /**
@@ -93,9 +95,11 @@ public class Tracker {
     Integer indexOfReplacedCell = -1;
     for (Item theItem : this.items) {
       indexOfReplacedCell++;
-      if (theItem.getID() == id) break;
+      if (StringUtils.equals(theItem.getID(), id)) {
+        item.setId(theItem.getID());
+        break;
+      }
     }
-    item.setId(this.generateId());
     this.items.set(indexOfReplacedCell, item);
   }
 
