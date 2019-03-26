@@ -18,6 +18,10 @@ public class User implements Comparable<User> {
         return this.age > user.age ? 1 : -1;
     }
 
+    public Boolean equals (User user) {
+        return (this.age.equals(user.age)) && (this.name.equals(user.name));
+    }
+
     public Integer getAge() {
         return age;
     }
