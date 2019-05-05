@@ -12,4 +12,8 @@ public class SortUser {
     public Set<User> sort(List<User> users) {
         return new TreeSet<>(users);
     }
+
+    public List<User> sortNameLenght (List <User>) {
+
+    }
 }
