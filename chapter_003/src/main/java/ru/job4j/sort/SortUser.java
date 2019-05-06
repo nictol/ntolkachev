@@ -10,24 +10,8 @@ public class SortUser {
         return new TreeSet<>(users);
     }
 
-    public List<User> sortNameLength (List <User> users) {
-        List <User> userList =  new ArrayList<>(users);
-        userList.sort(
-                new Comparator<User>() {
-                    @Override
-                    public int compare(User o1, User o2) {
-                        int result;
-                        if (o1.getName().length() == o2.getName().length()) result = 0;
-                        else result = o1.getName().length() > o2.getName().length() ? 1 : -1;
-                        return result;
-                    }
-                }
-        );
-        return  userList;
-    }
-
-    public List <User>  sortByAllFields (List <User> users ) {
-        List <User> userList = new ArrayList<>(users);
+    public List<User> sortByAllFields(List<User> users) {
+        List<User> userList = new ArrayList<>(users);
         userList.sort(
                 new Comparator<User>() {
                     @Override
@@ -39,6 +23,22 @@ public class SortUser {
                             if (o1.getAge() == o2.getAge()) result = 0;
                             else result = o1.getAge() > o2.getAge() ? 1 : -1;
                         }
+                        return result;
+                    }
+                }
+        );
+        return userList;
+    }
+
+    public List<User> sortNameLength(List<User> users) {
+        List<User> userList = new ArrayList<>(users);
+        userList.sort(
+                new Comparator<User>() {
+                    @Override
+                    public int compare(User o1, User o2) {
+                        int result;
+                        if (o1.getName().length() == o2.getName().length()) result = 0;
+                        else result = o1.getName().length() > o2.getName().length() ? 1 : -1;
                         return result;
                     }
                 }
