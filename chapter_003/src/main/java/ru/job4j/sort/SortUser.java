@@ -20,8 +20,7 @@ public class SortUser {
                         if (o1.getName().compareTo(o2.getName()) != 0) {
                             result = o1.getName().compareTo(o2.getName());
                         } else {
-                            if (o1.getAge() == o2.getAge()) result = 0;
-                            else result = o1.getAge() > o2.getAge() ? 1 : -1;
+                            result = o1.getAge() > o2.getAge() ? 1 : -1;
                         }
                         return result;
                     }
@@ -36,10 +35,7 @@ public class SortUser {
                 new Comparator<User>() {
                     @Override
                     public int compare(User o1, User o2) {
-                        int result;
-                        if (o1.getName().length() == o2.getName().length()) result = 0;
-                        else result = o1.getName().length() > o2.getName().length() ? 1 : -1;
-                        return result;
+                        return o1.getName().length() > o2.getName().length() ? 1 : -1;
                     }
                 }
         );
