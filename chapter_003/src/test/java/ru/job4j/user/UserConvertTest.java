@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 public class UserConvertTest {
 
@@ -24,7 +24,7 @@ public class UserConvertTest {
         mapUsers.put(1, users.get(0));
         mapUsers.put(2, users.get(1));
         UserConvert userConverter = new UserConvert();
-        Map <Integer, User> result = userConverter.process(users);
-        assertThat ( result , is (mapUsers) );
+        Map<Integer, User> result = userConverter.process(users);
+        assertThat(result, is(mapUsers));
     }
 }

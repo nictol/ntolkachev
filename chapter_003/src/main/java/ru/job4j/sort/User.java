@@ -18,7 +18,7 @@ public class User implements Comparable<User> {
         return Integer.compare(this.age, user.age);
     }
 
-    public Boolean equals (User user) {
+    public Boolean equals(User user) {
         return (this.age.equals(user.age)) && (this.name.equals(user.name));
     }
 

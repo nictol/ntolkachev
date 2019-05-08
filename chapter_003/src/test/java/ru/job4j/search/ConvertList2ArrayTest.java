@@ -57,7 +57,7 @@ public class ConvertList2ArrayTest {
                 Arrays.asList(1, 2, 3, 4, 5, 6, 7),
                 9
         );
-        int[][] expect = {{1}, {2}, {3}, {4}, {5}, {6}, {7}, {0}, {0},};
+        int[][] expect = {{1}, {2}, {3}, {4}, {5}, {6}, {7}, {0}, {0}};
         assertThat(result, is(expect));
     }
 }

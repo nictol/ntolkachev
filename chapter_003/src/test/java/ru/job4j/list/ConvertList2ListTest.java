@@ -15,9 +15,9 @@ import static org.junit.Assert.assertThat;
 
 public class ConvertList2ListTest {
     @Test
-    public void FirstTest() {
+    public void firstTest() {
         ConvertList2Array listConverter = new ConvertList2Array();
-        List <int[]> list = new ArrayList<>();
+        List<int[]> list = new ArrayList<>();
         list.add(new int[]{1, 2});
         list.add(new int[]{3, 4, 5, 6});
         List<Integer> result = listConverter.convert(list);

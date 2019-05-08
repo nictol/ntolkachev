@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class SortUserTest {
 
     @Test
-    public void Test1() {
+    public void test1() {
         List<User> listUsers = new ArrayList<>();
         listUsers.add(new User(18, "Юрий"));
         listUsers.add(new User(18, "Олег"));
@@ -34,7 +34,7 @@ public class SortUserTest {
     }
 
     @Test
-    public void Test2() {
+    public void test2() {
         List<User> listUsers = new ArrayList<>();
         listUsers.add(new User(18, "Юрий"));
         listUsers.add(new User(18, "Олег"));
@@ -46,9 +46,11 @@ public class SortUserTest {
         sortedUserList = sortUser.sortNameLength(listUsers);
         int prevLength = -1, currentLength;
         boolean isSorted = true;
-        for (Iterator<User> userIterator = sortedUserList.iterator(); userIterator.hasNext(); ) {
+        for (Iterator<User> userIterator = sortedUserList.iterator(); userIterator.hasNext();) {
             currentLength = userIterator.next().getName().length();
-            if (prevLength > currentLength) isSorted = false;
+            if (prevLength > currentLength) {
+                isSorted = false;
+            }
             prevLength = currentLength;
         }
         assertTrue(isSorted);
@@ -56,7 +58,7 @@ public class SortUserTest {
 
 
     @Test
-    public void Test3() {
+    public void test3() {
         List<User> listUsers = new ArrayList<>();
         listUsers.add(new User(18, "Юрий"));
         listUsers.add(new User(18, "Олег"));
@@ -70,12 +72,15 @@ public class SortUserTest {
         sortedUserList = sortUser.sortByAllFields(listUsers);
         User prevUser = null, currentUser;
         boolean isSorted = true;
-        for (Iterator<User> userIterator = sortedUserList.iterator(); userIterator.hasNext(); ) {
+        for (Iterator<User> userIterator = sortedUserList.iterator(); userIterator.hasNext();) {
             currentUser = userIterator.next();
             if (prevUser != null) {
-                if (prevUser.getName().compareTo(currentUser.getName()) == 1) isSorted = false;
-                else if (prevUser.getName().compareTo(currentUser.getName()) == 0) {
-                    if (prevUser.getAge() > currentUser.getAge()) isSorted = false;
+                if (prevUser.getName().compareTo(currentUser.getName()) == 1) {
+                    isSorted = false;
+                } else if (prevUser.getName().compareTo(currentUser.getName()) == 0) {
+                    if (prevUser.getAge() > currentUser.getAge()) {
+                        isSorted = false;
+                    }
                 }
             }
             prevUser = currentUser;
