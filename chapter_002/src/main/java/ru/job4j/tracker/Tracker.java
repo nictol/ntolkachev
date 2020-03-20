@@ -51,13 +51,12 @@ public class Tracker {
    * @param id
    */
   public void delete(String id) {
-    Iterator<Item> itemIterator = this.items.iterator();
-    while (itemIterator.hasNext()) {
-      Item item = itemIterator.next();
-      if (item.getID().equals(id)) {
-        itemIterator.remove();
-      }
+    int deletedIndex = -1;
+    for (Item currentItem : this.items) {
+      deletedIndex++;
+      if (currentItem.getID().equals(id)) break;
     }
+    this.items.remove(deletedIndex);
   }
 
   /**
@@ -78,7 +77,7 @@ public class Tracker {
   public List<Item> findByName(String key) {
     List<Item> findResult = new ArrayList<>();
     for (Item item : this.items) {
-      if (item.getName().equals(key)) {
+      if (item.getName().compareTo(key) == 0) {
          findResult.add(item);
       }
     }
@@ -92,15 +91,17 @@ public class Tracker {
    * @param item Элемент на замену
    */
   public void replace(String id, Item item) {
-    Integer indexOfReplacedCell = -1;
+    Integer replacedIndex = -1;
     for (Item theItem : this.items) {
-      indexOfReplacedCell++;
+      replacedIndex++;
       if (StringUtils.equals(theItem.getID(), id)) {
         item.setId(theItem.getID());
         break;
       }
     }
-    this.items.set(indexOfReplacedCell, item);
+    if (replacedIndex >= this.items.size()) {
+      this.items.set(replacedIndex, item);
+    }
   }
 
   /**
