@@ -83,13 +83,13 @@ public class StartUITest {
                 new String(out.toByteArray()),
                 is(
                         new StringBuilder()
-                                .append("0 : Add the new item\n")
-                                .append("1 : Show all items\n")
-                                .append("2 : Edit item\n")
-                                .append("3 : Delete item\n")
-                                .append("4 : Find item by Id\n")
-                                .append("5 : Find item by Name\n")
-                                .append("test name\n")
+                                .append("0 : Add the new item\r\n")
+                                .append("1 : Show all items\r\n")
+                                .append("2 : Edit item\r\n")
+                                .append("3 : Delete item\r\n")
+                                .append("4 : Find item by Id\r\n")
+                                .append("5 : Find item by Name\r\n")
+                                .append("test name\r\n")
                                 .toString()
                 )
         );

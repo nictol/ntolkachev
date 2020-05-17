@@ -54,7 +54,9 @@ public class Tracker {
     int deletedIndex = -1;
     for (Item currentItem : this.items) {
       deletedIndex++;
-      if (currentItem.getID().equals(id)) break;
+      if (currentItem.getID().equals(id)) {
+        break;
+      }
     }
     this.items.remove(deletedIndex);
   }
@@ -99,7 +101,7 @@ public class Tracker {
         break;
       }
     }
-    if (replacedIndex >= this.items.size()) {
+    if (replacedIndex <= this.items.size()) {
       this.items.set(replacedIndex, item);
     }
   }

@@ -32,7 +32,6 @@ public class StartUI {
      * Основой цикл программы.
      */
     public void init() {
-
         MenuTracker mune = new MenuTracker(input, tracker);
         mune.fillActions();
         do {
