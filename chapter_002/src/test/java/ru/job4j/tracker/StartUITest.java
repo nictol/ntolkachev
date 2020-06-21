@@ -79,7 +79,6 @@ public class StartUITest {
         Item item = tracker.add(new Item("test name", "qaz", 451));
         Input input = new StubInput(new String[]{"1", "y"}, new long[]{});
         new StartUI(input, tracker).init();
-
         assertThat(
                 new String(out.toByteArray()),
                 is(

@@ -28,18 +28,15 @@ public class ConvertList2Array {
     }
 
     /**
-     *
      * @param list - лист одномерных массивов
      * @return лист, содержащий все элементы входных массивов
      */
     public List<Integer> convert(List<int[]> list) {
         List<Integer> resultList = new ArrayList<>();
-        for (Iterator<int[]> iter = list.iterator(); iter.hasNext();) {
-            int[] array = iter.next();
-            for (int i = 0; i < array.length; i++) {
-                resultList.add(array[i]);
+        for (int[] listItem : list) {
+            for (int arrayItem : listItem) {
+                resultList.add(arrayItem);
             }
-
         }
         return resultList;
     }
